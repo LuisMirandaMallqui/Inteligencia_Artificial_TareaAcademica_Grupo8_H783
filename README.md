@@ -1,6 +1,6 @@
 # Inteligencia_Artificial_TareaAcademica_Grupo8_H783
-# Repositorio para la tarea académica del curso de Inteligencia Artificial 1INF24
-
+**Repositorio para la tarea académica del curso de Inteligencia Artificial 1INF24
+**
 Este repositorio contiene el trabajo realizado por los estudiantes del curso de **Inteligencia Artificial (1INF24)**. A continuación, se presentan los miembros del equipo:
 
 - **Ariana Burga**, código 20226705
