@@ -12,7 +12,7 @@ Este repositorio contiene el trabajo realizado por los estudiantes del curso de 
 
 ## Descripción del Proyecto
 
-El objetivo principal de este proyecto es **pronosticar la tasa de natalidad en Perú** mediante el uso de **modelos predictivos**. Este desarrollo tiene como base un dataset proporcionado por el **gobierno del Perú** con registros de los últimos 10 años, y se utilizará para apoyar la **planificación estratégica del sector salud**.
+El objetivo principal de este proyecto es **pronosticar la tasa de natalidad en Perú** mediante el uso de **modelos predictivos**. Este desarrollo tiene como base un dataset proporcionado por el **gobierno del Perú** con registros de los últimos 10 años (2015-2025), y se utilizará para apoyar la **planificación estratégica del sector salud, educativo y pensionario**.
 
 ## Metodología
 
@@ -24,12 +24,11 @@ Para resolver el problema propuesto, se implementó un pipeline de procesamiento
 2. **Integración Geográfica**: Vinculación de nacimientos con el catálogo de Ubigeo del INEI para enriquecimiento con información departamental.
 3. **Agregación Espacio-Temporal**: Transformación de registros individuales en un panel trimestral-departamental.
 4. **Ingeniería de Características**:
-   - Creación de variables temporales: `lag1`, `lag4`, `ma4` (media móvil de 4 trimestres)
+   - Creación de variables temporales: lag1, lag4, ma4 (media móvil de 4 trimestres)
    - Variables sociodemográficas agregadas: edad materna, educación, estado civil, características reproductivas
    - Codificación one-hot para la variable departamento
 5. **División Temporal**: 
-   - Entrenamiento: hasta 2022
-   - Validación: 2023
+   - Dev: 2015-2023
    - Prueba: 2024-2025 (excluyendo período COVID-19: 2020-2021-T2)
 
 ### Algoritmos Utilizados
@@ -42,18 +41,18 @@ Para resolver el problema propuesto, se implementó un pipeline de procesamiento
 
 ### Evaluación del Modelo
 
-Se utilizaron las métricas de **R², RMSE y MAE** con **validación cruzada temporal (TimeSeriesSplit)** de 5 folds para evaluar la precisión y robustez de las predicciones en secuencias temporales futuras.
+Se utilizaron las métricas de **R2, RMSE y MAE** con **validación cruzada temporal (TimeSeriesSplit)** de 5 folds para evaluar la precisión y robustez de las predicciones en secuencias temporales futuras.
 
 ## Resultados Principales
 
-- **Mejor modelo**: XGBoost demostró el mejor desempeño predictivo con R² = 0.9107 y MAE = 0.1618 en el conjunto de prueba
+- **Mejor modelo**: XGBoost demostró el mejor desempeño predictivo con R2 = 0.9107 y MAE = 0.1618 en el conjunto de prueba
 - **Variables más influyentes**: Las categorías temporal (53.08%) y geográfica (38.77%) explican conjuntamente más del 90% del poder predictivo
 - **Departamentos con mayor variabilidad**: Huancavelica y Madre de Dios mostraron la mayor influencia predictiva
 - **Impacto COVID-19**: La exclusión del período pandémico mejoró significativamente todas las métricas del modelo
 
 ## Conclusiones
 
-El modelo XGBoost validó exitosamente la hipótesis inicial, superando los umbrales establecidos de R² > 0.7 y MAE < 0.5. El análisis reveló que los patrones espacio-temporales agregados capturan mejor la dinámica demográfica que las variables sociodemográficas individuales. La metodología implementada demuestra que los enfoques de machine learning pueden capturar relaciones no lineales complejas en datos demográficos, ofreciendo una alternativa robusta a los métodos tradicionales de proyección para la planificación descentralizada de políticas públicas.
+El modelo XGBoost validó exitosamente la hipótesis inicial, superando los umbrales establecidos de R2 > 0.7 y MAE < 0.5. El análisis reveló que los patrones espacio-temporales agregados capturan mejor la dinámica demográfica que las variables sociodemográficas individuales. La metodología implementada demuestra que los enfoques de machine learning pueden capturar relaciones no lineales complejas en datos demográficos, ofreciendo una alternativa robusta a los métodos tradicionales de proyección para la planificación descentralizada de políticas públicas.
 
 ## Trabajo Futuro
 
@@ -75,4 +74,4 @@ El modelo XGBoost validó exitosamente la hipótesis inicial, superando los umbr
 ## Repositorio
 
 El código, datasets y recursos utilizados en este proyecto están disponibles en el siguiente repositorio: 
-**[https://github.com/LuisMirandaMallqui/Inteligencia_Artificial_TareaAcademica_Grupp8_H783.git](https://github.com/LuisMirandaMallqui/Inteligencia_Artificial_TareaAcademica_Grupo8_H783)**
+**[https://github.com/LuisMirandaMallqui/Inteligencia_Artificial_TareaAcademica_Grupo8_H783.git](https://github.com/LuisMirandaMallqui/Inteligencia_Artificial_TareaAcademica_Grupo8_H783)**
